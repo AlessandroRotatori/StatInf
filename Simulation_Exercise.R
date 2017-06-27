@@ -16,13 +16,7 @@ sd <- 1 / lambda
 
 ## MEAN
 
-mns <- numeric(sim)
 
-set.seed(10)
-for (i in 1:sim) mns[i] <- mean(rexp(n, lambda))
-
-set.seed(10)
-sim.vector <- rexp(sim * n, lambda)
 
 ## mean of the population of 40 iid exponentials
 data.frame(Estimated = c(mean(mns), var(mns)), Theoretical = c(mn, sd^2/n), 
@@ -56,3 +50,6 @@ g <- g + labs(caption = paste("Figure ", 1), title = "Distribution of Simulated 
 g <- g + theme(plot.title = element_text(hjust=0.5))
 g <- g + xlim(3, 8)
 g
+
+##
+
